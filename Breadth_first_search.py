@@ -34,7 +34,7 @@ class Bfs:
             if node not in explored:
                 explored.append(node)
 
-                # define graph since it is not an input, but a property of class
+                # call self.graph since it is not an input to the function, but a property of class when instantiated.
                 neighbors = self.graph[node]
 
                 for neighbor in neighbors:
@@ -42,3 +42,40 @@ class Bfs:
 
         # Return the list when the queue is finally empty
         return explored
+
+    def bfs_shortest(self, start, end):
+        """
+        This function will calculate the shortest path between the two points on a graph.
+
+        :param start: The starting point on the graph (string)
+        :param end: The ending point on the graph (string)
+        :return: Returns a list containing the shortest path between the start and end point
+        """
+
+        explored = []
+
+        queue = [[start]]
+
+        if start == end:
+            return "These two points are adjacent."
+
+        while queue:
+
+            path = queue.pop(0)
+
+            node = path[-1]
+
+            if node not in explored:
+                neighbors = self.graph[node]
+
+                for neighbor in neighbors:
+                    new_path = list(path)
+                    new_path.append(neighbor)
+                    queue.append(new_path)
+
+                    if neighbor == end:
+                        return new_path
+
+                explored.append(node)
+
+        return "These two nodes are not connected."
