@@ -50,6 +50,7 @@ class Bfs:
                     queue.append(neighbor)
 
         # Return the list when the queue is finally empty
+        self.connected_nodes = explored
         return explored
 
     def bfs_shortest(self, start, end):
@@ -93,6 +94,7 @@ class Bfs:
 
                     # If the neighboring node is the end node, then we have found the shortest path
                     if neighbor == end:
+                        self.shortest_path = new_path
                         return new_path
 
                 # If none of the neighboring nodes are the end node, append the current node in queue to explored list
