@@ -71,7 +71,7 @@ class Bfs:
 
         # Start with the simplest case
         if start == end:
-            return "These two points are adjacent."
+            return "These two points are the same."
 
         # Iterate over the queue until its empty
         while queue:
