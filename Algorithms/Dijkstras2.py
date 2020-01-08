@@ -99,6 +99,7 @@ class Graph:
             path.appendleft(current_vertex)
         return path
 
+
 # Implementing the algorithm
 graph = Graph([
     ("a", "b", 7),  ("a", "c", 9),  ("a", "f", 14), ("b", "c", 10),
