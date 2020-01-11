@@ -9,6 +9,7 @@ Edge = namedtuple('Edge', 'start, end, cost')
 def make_edge(start, end, cost=1):
     return Edge(start, end, cost)
 
+
 class Graph:
 
     def __init__(self, edges):
